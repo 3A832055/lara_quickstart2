@@ -37,42 +37,38 @@
                 </div>
             </div>
 
-{{--         <!-- Current Tasks -->--}}
-{{--           @if (count($tasks) > 0)--}}
-{{--               <div class="panel panel-default">--}}
-{{--                   <div class="panel-heading">--}}
-{{--                       Current Tasks--}}
-{{--                   </div>--}}
+            @if (count($tasks) > 0)
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        目前任務
+                    </div>
 
-{{--                   <div class="panel-body">--}}
-{{--                       <table class="table table-striped task-table">--}}
-{{--                           <thead>--}}
-{{--                           <th>Task</th>--}}
-{{--                           <th>&nbsp;</th>--}}
-{{--                           </thead>--}}
-{{--                           <tbody>--}}
-{{--                           @foreach ($tasks as $task)--}}
-{{--                               <tr>--}}
-{{--                                  <td class="table-text"><div>{{ $task->name }}</div></td>--}} 
+                    <div class="panel-body">
+                        <table class="table table-striped task-table">
 
-{{--                                   <!-- Task Delete Button -->--}}
-{{--                                   <td>--}}
-{{--                                        <form action="{{url('task/' . $task->id)}}" method="POST">--}}
-{{--                                           {{ csrf_field() }}--}}
-{{--                                           {{ method_field('DELETE') }}--}}
+                            <!-- 表頭 -->
+                            <thead>
+                            <th>Task</th>
+                            <th>&nbsp;</th>
+                            </thead>
 
-{{--                                             <button type="submit" id="delete-task-{{ $task->id }}" class="btn btn-danger">--}}
-{{--                                                 <i class="fa fa-btn fa-trash"></i>Delete--}}
-{{--                                            </button>--}}
-{{--                                         </form>--}}
-{{--                                     </td>--}}
-{{--                                 </tr>--}}
-{{--                             @endforeach--}}
-{{--                             </tbody>--}}
-{{--                         </table>--}}
-{{--                     </div>--}}
-{{--                 </div>--}}
-{{--             @endif--}}
-{{--         </div>--}}
-{{--     </div>--}}
+                            <!-- 表身 -->
+                            <tbody>
+                            @foreach ($tasks as $task)
+                                <tr>
+                                    <!-- 任務名稱 -->
+                                    <td class="table-text">
+                                        <div>{{ $task->name }}</div>
+                                    </td>
+
+                                    <td>
+                                        <!-- 代辦：刪除按鈕 -->
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    @endif
 @endsection
